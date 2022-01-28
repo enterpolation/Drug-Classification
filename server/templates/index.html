@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>
+        Drug Classification
+    </title>
+
+    <style>
+        body {font: normal 12px Trebuchet MS}
+        form {text-align: center}
+    </style>
+
+</head>
+
+<body>
+
+<h1>
+    <p align="center">
+        Drug Type Prediction
+    </p>
+</h1>
+
+
+<h2>
+    <p align="center">
+        Feature Input
+    </p>
+</h2>
+
+
+<form action='/prediction' method='post'>
+
+    <input type="number" name="age" min="1" max="100"
+           placeholder="Age"  required autofocus>
+    <input type="number" name="na_to_k" step="0.01" min="1" max="100"
+           placeholder="Na_to_K" required>
+    <input type="number" name="bp_high" min="0" max="1"
+           placeholder="BP_HIGH" required>
+    <input type="number" name="bp_low" min="0" max="1"
+           placeholder="BP_LOW" required>
+    <input type="number" name="bp_normal" min="0" max="1"
+           placeholder="BP_NORMAL" required>
+    <input type="number" name="ch_high" min="0" max="1"
+           placeholder="Cholesterol_HIGH" required>
+    <input type="number" name="ch_normal" min="0" max="1"
+           placeholder="Cholesterol_NORMAL" required>
+
+    <p>
+        <button type="submit"> Predict </button>
+        <button type="reset"> Reset </button>
+    </p>
+
+</form>
+
+
+<h3>
+    <p align="center">
+        <font color="red">
+            {{ prediction }}
+        </font>
+    </p>
+</h3>
+
+<h3>
+    <p align="center">
+        <font color="red">
+            {{ probability }}
+        </font>
+    </p>
+</h3>
+
+</body>
+</html>
